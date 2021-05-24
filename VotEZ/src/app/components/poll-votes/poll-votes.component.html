@@ -1,0 +1,14 @@
+<table class="table">
+    <tbody>
+        <tr>
+            <td>User</td>
+            <td>Poll Choice</td>
+            <td>Choice</td>
+        </tr>
+    </tbody>
+        <tr *ngFor="let pv of pollvotes;">
+            <td>{{pv.userID}}</td>
+            <td>{{pv.pollChoiceID}}</td>
+            <td>{{pv.choice}}</td>
+        </tr>
+</table>
