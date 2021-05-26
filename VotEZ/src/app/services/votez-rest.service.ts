@@ -17,6 +17,7 @@ export class VotezRESTService {
     )
   }
   // defined urls to query
+  pollURL: string = environment.POLL;
   pollVoteURL : string = environment.POLL_VOTE;
   // query external REST API
   constructor(private http: HttpClient) { }

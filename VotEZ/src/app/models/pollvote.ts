@@ -1,7 +1,7 @@
 export interface pollvote
 {
     id: number;
-    userID: number;
-    pollChoiceID: number;
+    email: string;
+    pollID: number;
     choice: string;
 }
