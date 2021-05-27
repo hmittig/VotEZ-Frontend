@@ -9,13 +9,19 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { AuthComponent } from './components/auth/auth.component';
 import { environment } from 'src/environments/environment';
+import { YourPollsComponent } from './components/your-polls/your-polls.component';
+import { YourPollHistoryComponent } from './components/your-poll-history/your-poll-history.component';
+import { CreatePollComponent } from './components/create-poll/create-poll.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PollVotesComponent,
     NavBarComponent,
-    AuthComponent
+    AuthComponent,
+    YourPollsComponent,
+    YourPollHistoryComponent,
+    CreatePollComponent
   ],
   // Where external modules are declared so they can be utilized
   imports: [

@@ -15,13 +15,13 @@
                 </li>
                 <li class="nav-item" *ngIf="auth.isAuthenticated$ | async;">
                     <div ngbDropdown class="d-inline-block">
-                        <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Test
-                            </a>
+                        <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>History</a>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <a ngbDropdownItem routerLink="poll-votes">View Votes</a>
-                            <a ngbDropdownItem>Log In</a>
+                            <a ngbDropdownItem routerLink="poll-votes">View Polls You've Created</a>
+                            <a ngbDropdownItem routerLink ="poll-votes">View Polls You've Voted On</a>
                         </div>
                     </div>
+                    <a class="nav-link" class="" routerLink="your-polls">Your Polls</a>
                 </li>
             </ul>
         </div>
