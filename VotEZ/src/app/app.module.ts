@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { YourPollsComponent } from './components/your-polls/your-polls.component';
 import { YourPollHistoryComponent } from './components/your-poll-history/your-poll-history.component';
 import { CreatePollComponent } from './components/create-poll/create-poll.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CreatePollComponent } from './components/create-poll/create-poll.compon
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
     AuthModule.forRoot(
       {
         domain: environment.DOMAIN,

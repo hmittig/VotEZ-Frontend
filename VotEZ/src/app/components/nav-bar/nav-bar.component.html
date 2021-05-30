@@ -13,15 +13,17 @@
                 <li class="nav-item">
                     <a class="nav-link">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/create-poll']" [routerLinkActive]="['active']">Create Poll</a>
+                  </li>
                 <li class="nav-item" *ngIf="auth.isAuthenticated$ | async;">
                     <div ngbDropdown class="d-inline-block">
                         <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>History</a>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <a ngbDropdownItem routerLink="poll-votes">View Polls You've Created</a>
-                            <a ngbDropdownItem routerLink ="poll-votes">View Polls You've Voted On</a>
+                            <a ngbDropdownItem [routerLink]="['/your-polls']" [routerLinkActive]="['active']">View Polls You've Created</a>
+                            <a ngbDropdownItem [routerLink]="['/your-poll-history']" [routerLinkActive]="['active']">View Polls You've Voted On</a>
                         </div>
                     </div>
-                    <a class="nav-link" class="" routerLink="your-polls">Your Polls</a>
                 </li>
             </ul>
         </div>

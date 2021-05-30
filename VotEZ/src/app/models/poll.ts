@@ -3,7 +3,7 @@ export interface poll {
     id: number,
     question: string,
     code: string,
-    dateToClose: Date,
+    dateToClose: any,
     email: string,
     pollchoice: pollchoice
 }

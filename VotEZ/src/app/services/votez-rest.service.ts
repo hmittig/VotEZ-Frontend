@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { pollvote } from '../models/pollvote';
+import { poll } from '../models/poll';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,13 @@ export class VotezRESTService {
   constructor(private http: HttpClient) { }
 
   // Logic
+
+  //Poll Logic
+  CreateAPoll(newpoll: poll): Observable<poll>
+  {
+    return this.http.post<poll>(this.pollURL, newpoll, this.httpOptions);
+  }
+
   GetAllVotes() : Observable<pollvote[]>{
     return this.http.get<pollvote[]>(`${this.pollVoteURL}`,this.httpOptions);
   }
