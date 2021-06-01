@@ -1,1 +1,16 @@
-<p>your-polls works!</p>
+<div class="container transparent">
+    <table class="table">
+        <thead>
+            <th>Poll Question</th>
+            <th>Code</th>
+            <!-- <th>Superpower Name</th> -->
+        </thead>
+        <tbody>
+            <tr *ngFor="let pollget of yourpollss;">
+                <td>{{pollget.question}}</td>
+                <td>{{pollget.code}}</td>
+                <!-- <td>{{hero.superPower.name}}</td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>

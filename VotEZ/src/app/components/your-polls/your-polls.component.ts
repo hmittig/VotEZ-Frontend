@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
+import { poll } from 'src/app/models/poll';
+import { VotezRESTService } from 'src/app/services/votez-rest.service';
 
 @Component({
   selector: 'app-your-polls',
@@ -6,10 +9,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./your-polls.component.css']
 })
 export class YourPollsComponent implements OnInit {
-
-  constructor() { }
+  yourpollss: poll[] = [];
+  useremail: string;
+  constructor(private authService :AuthService, public pollService: VotezRESTService) { 
+  }
 
   ngOnInit(): void {
+    this.authService.user$.subscribe
+     (
+       authUser =>
+
+       this.pollService.GetUserByEmail(authUser.email).subscribe
+       (
+         foundUser =>
+         {
+           this.useremail = foundUser.email;
+           this.pollService.GetPollsByUser(this.useremail).subscribe(
+             (result) =>{
+              this.yourpollss = result;
+             }
+           )
+
+         }
+       )
+     )
   }
 
 }

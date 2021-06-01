@@ -1,5 +1,5 @@
-import { getLocaleDateTimeFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { poll } from 'src/app/models/poll';
 import { VotezRESTService } from 'src/app/services/votez-rest.service';
 
@@ -10,7 +10,9 @@ import { VotezRESTService } from 'src/app/services/votez-rest.service';
 })
 export class CreatePollComponent implements OnInit {
   newpoll: poll;
-  constructor(private pollService: VotezRESTService) {
+  authUser: any;
+  dateEntered =  Date.now;
+  constructor(private authService :AuthService, public pollService: VotezRESTService) {
     this.newpoll =
     {
       id: 0,
@@ -29,14 +31,30 @@ export class CreatePollComponent implements OnInit {
     }
    }
 
+
+
   ngOnInit(): void {
+     this.authService.user$.subscribe
+     (
+       authUser =>
+
+       this.pollService.GetUserByEmail(authUser.email).subscribe
+       (
+         foundUser =>
+         {
+           this.newpoll.email = foundUser.email;
+         }
+       )
+     )
   }
 
   onSubmit(): void{
+    //debugger;
+    //this.newpoll.dateToClose = this.dateEntered;
     this.pollService.CreateAPoll(this.newpoll).subscribe(
       (poll) =>
       {
-        alert(`${poll.email} has created a new poll!`);
+        alert(`${this.newpoll.email} has created a new poll! Your access code is ${this.newpoll.code}`);
       }
     )
   }

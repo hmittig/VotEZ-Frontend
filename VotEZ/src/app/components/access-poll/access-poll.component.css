@@ -1,0 +1,16 @@
+form {
+    text-align: center;
+  }
+
+label{
+    text-align: center;
+    color: ghostwhite;
+}
+
+input{
+    object-position: center;
+}
+
+div{
+    object-position: center;
+}

@@ -1,7 +1,7 @@
 <div class="container transparent">
     <form (ngSubmit)="onSubmit()" #pollForm="ngForm">
         <div class="form-group">
-            <label for="heroName">Poll Question: </label>
+            <label for="Question">Poll Question: </label>
             <input type="text" [(ngModel)]="newpoll.question" name="Question" id="question" #name="ngModel"
                 class="form-control" placeholder="Enter a question">
         </div>
@@ -10,6 +10,31 @@
             <input type="text" [(ngModel)]="newpoll.code" name="Code" id="code" #name="ngModel" class="form-control"
                 placeholder="Enter a code">
         </div>
+        <div class="form-group">
+            <label for="hp">Choice 1: </label>
+            <input type="text" [(ngModel)]="newpoll.pollchoice.option1" name="option1" id="option1" #name="ngModel" class="form-control"
+                placeholder="Enter a voting option">
+        </div>
+        <div class="form-group">
+            <label for="hp">Choice 2: </label>
+            <input type="text" [(ngModel)]="newpoll.pollchoice.option2" name="option1" id="option1" #name="ngModel" class="form-control"
+                placeholder="Enter a voting option">
+        </div>
+        <div class="form-group">
+            <label for="hp">Choice 3: </label>
+            <input type="text" [(ngModel)]="newpoll.pollchoice.option3" name="option1" id="option1" #name="ngModel" class="form-control"
+                placeholder="Enter a voting option">
+        </div>
+        <div>
+            <label for="dateToClose">End Date</label>
+        </div>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Poll End Date" [(ngModel)]="this.newpoll.dateToClose">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker ></mat-datepicker>
+          </mat-form-field>
+        <div></div>
         <button type="submit" class="btn btn-secondary">Submit</button>
     </form>
+    <!-- <span *ngIf="auth.user$ | async as user" class="nav-link d-flex">{{user.email}}</span> -->
 </div>
