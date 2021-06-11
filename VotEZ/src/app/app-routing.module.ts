@@ -5,6 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AccessPollComponent } from './components/access-poll/access-poll.component';
 import { CreatePollComponent } from './components/create-poll/create-poll.component';
 import { HomeComponent } from './components/home/home.component';
+import { PollDetailsComponent } from './components/poll-details/poll-details.component';
 import { PollVotesComponent } from './components/poll-votes/poll-votes.component';
 import { YourPollHistoryComponent } from './components/your-poll-history/your-poll-history.component';
 import { YourPollsComponent } from './components/your-polls/your-polls.component';
@@ -38,6 +39,11 @@ const routes: Routes = [
   {
     path: 'your-poll-history',
     component: YourPollHistoryComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'poll-details',
+    component: PollDetailsComponent,
     canActivate: [AuthGuard]
   },
   {

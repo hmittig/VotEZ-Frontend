@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AccessPollComponent } from './components/access-poll/access-poll.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
+import { PollDetailsComponent } from './components/poll-details/poll-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { HomeComponent } from './components/home/home.component';
     CreatePollComponent,
     AccessPollComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    PollDetailsComponent
   ],
   // Where external modules are declared so they can be utilized
   imports: [

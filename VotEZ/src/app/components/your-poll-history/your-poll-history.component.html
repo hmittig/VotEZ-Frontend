@@ -1,1 +1,17 @@
-<h1>Coming soon...</h1>>
+<div class="container transparent">
+    <h2>Polls You've Voted On</h2>
+    <table class="table">
+        <thead>
+            <th>Poll Question</th>
+            <th>Code</th>
+            <!-- <th>Superpower Name</th> -->
+        </thead>
+        <tbody>
+            <tr *ngFor="let pollget of uservotedpolls;" (click)="GetPollByID(pollget.id)">
+                <td>{{pollget.question}}</td>
+                <td>{{pollget.code}}</td>
+                <!-- <td>{{hero.superPower.name}}</td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>

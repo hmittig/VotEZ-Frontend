@@ -50,9 +50,16 @@ export class VotezRESTService {
     return this.http.get<poll[]>(`${this.pollURL}/createdpolls/${email}`,this.httpOptions);
   }
 
+  GetPollByID(id: number) : Observable<poll>{
+    return this.http.get<poll>(`${this.pollURL}/${id}`, this.httpOptions);
+  }
+
   GetAllVotes() : Observable<pollvote[]>{
     return this.http.get<pollvote[]>(`${this.pollVoteURL}`,this.httpOptions);
   }
 
+  GetPollsUserHasVotedOn(email?: string) : Observable<poll []> {
+    return this.http.get<poll[]>(`${this.pollURL}/votedpolls/${email}`,this.httpOptions);
+  }
   
 }

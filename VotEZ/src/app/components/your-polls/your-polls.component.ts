@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { poll } from 'src/app/models/poll';
 import { VotezRESTService } from 'src/app/services/votez-rest.service';
@@ -11,7 +12,7 @@ import { VotezRESTService } from 'src/app/services/votez-rest.service';
 export class YourPollsComponent implements OnInit {
   yourpollss: poll[] = [];
   useremail: string;
-  constructor(private authService :AuthService, public pollService: VotezRESTService) { 
+  constructor(private authService :AuthService, public pollService: VotezRESTService, private router: Router) { 
   }
 
   ngOnInit(): void {
@@ -33,6 +34,12 @@ export class YourPollsComponent implements OnInit {
          }
        )
      )
+  }
+
+  GetPollByID(id: number){
+    this.router.navigate(['poll-details'], {
+      queryParams: {poll: id}
+    });
   }
 
 }

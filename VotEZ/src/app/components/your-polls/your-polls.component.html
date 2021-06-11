@@ -1,4 +1,5 @@
 <div class="container transparent">
+    <h2>Polls You've Created</h2>
     <table class="table">
         <thead>
             <th>Poll Question</th>
@@ -6,7 +7,8 @@
             <!-- <th>Superpower Name</th> -->
         </thead>
         <tbody>
-            <tr *ngFor="let pollget of yourpollss;">
+            <tr *ngFor="let pollget of yourpollss;" (click)="GetPollByID(pollget.id)">
+                <td hidden>{{pollget.id}}</td>
                 <td>{{pollget.question}}</td>
                 <td>{{pollget.code}}</td>
                 <!-- <td>{{hero.superPower.name}}</td> -->
