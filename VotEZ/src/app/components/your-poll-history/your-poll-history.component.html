@@ -4,13 +4,11 @@
         <thead>
             <th>Poll Question</th>
             <th>Code</th>
-            <!-- <th>Superpower Name</th> -->
         </thead>
         <tbody>
             <tr *ngFor="let pollget of uservotedpolls;" (click)="GetPollByID(pollget.id)">
                 <td>{{pollget.question}}</td>
                 <td>{{pollget.code}}</td>
-                <!-- <td>{{hero.superPower.name}}</td> -->
             </tr>
         </tbody>
     </table>

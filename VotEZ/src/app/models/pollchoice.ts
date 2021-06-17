@@ -1,4 +1,4 @@
-export interface pollchoice {
+export interface pollChoice {
     id: number,
     pollID: number,
     option1: string,

@@ -20,7 +20,7 @@ export class CreatePollComponent implements OnInit {
       code: '',
       dateToClose: Date.now,
       email: '',
-      pollchoice:
+      pollChoice:
       {
         id: 0,
         pollID: 0,

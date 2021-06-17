@@ -1,9 +1,9 @@
-import { pollchoice } from "./pollchoice";
+import { pollChoice } from "./pollchoice";
 export interface poll {
     id: number,
     question: string,
     code: string,
     dateToClose: any,
     email: string,
-    pollchoice: pollchoice
+    pollChoice: pollChoice
 }
