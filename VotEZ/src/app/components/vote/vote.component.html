@@ -1,0 +1,31 @@
+<div *ngIf="poll" class="container transparent">
+
+    <h2>Vote</h2>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Question: </td>
+                <td>{{poll.question}}</td>
+            </tr> 
+            <tr>
+                <td>Option 1: </td>
+                <td>{{poll.pollChoice.option1}}</td>
+                <button class="btn btn-primary" (click)="Vote(poll.pollChoice.option1)">Vote</button>
+            </tr>
+            <tr>
+                <td>Option 2: </td>
+                <td>{{poll.pollChoice.option2}}</td>
+                <button class="btn btn-primary" (click)="Vote(poll.pollChoice.option2)">Vote</button>
+            </tr>
+            <tr>
+                <td>Option 3: </td>
+                <td>{{poll.pollChoice.option3}}</td>
+                <button class="btn btn-primary" (click)="Vote(poll.pollChoice.option3)">Vote</button>
+            </tr>
+            <tr>
+                <td>Poll Closes On: {{poll.dateToClose}}</td>
+            </tr>
+        </tbody>
+        <button class="btn btn-primary" (click)="back()">Return to poll search</button>
+    </table>
+</div>

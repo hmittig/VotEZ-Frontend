@@ -61,5 +61,15 @@ export class VotezRESTService {
   GetPollsUserHasVotedOn(email?: string) : Observable<poll []> {
     return this.http.get<poll[]>(`${this.pollURL}/votedpolls/${email}`,this.httpOptions);
   }
+
+  PollCheck(code?: string, email?: string): Observable<poll>{
+    return this.http.get<poll>(`${this.pollURL}/${code},${email}`, this.httpOptions);
+  }
+
+  // PollVote Logic
+  AddAVote(pv: pollvote): Observable<pollvote>
+  {
+    return this.http.post<pollvote>(this.pollVoteURL, pv, this.httpOptions);
+  }
   
 }

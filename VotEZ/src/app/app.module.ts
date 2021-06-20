@@ -24,6 +24,7 @@ import { AccessPollComponent } from './components/access-poll/access-poll.compon
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { PollDetailsComponent } from './components/poll-details/poll-details.component';
+import { VoteComponent } from './components/vote/vote.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { PollDetailsComponent } from './components/poll-details/poll-details.com
     AccessPollComponent,
     AboutComponent,
     HomeComponent,
-    PollDetailsComponent
+    PollDetailsComponent,
+    VoteComponent
   ],
   // Where external modules are declared so they can be utilized
   imports: [

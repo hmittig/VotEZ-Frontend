@@ -7,6 +7,7 @@ import { CreatePollComponent } from './components/create-poll/create-poll.compon
 import { HomeComponent } from './components/home/home.component';
 import { PollDetailsComponent } from './components/poll-details/poll-details.component';
 import { PollVotesComponent } from './components/poll-votes/poll-votes.component';
+import { VoteComponent } from './components/vote/vote.component';
 import { YourPollHistoryComponent } from './components/your-poll-history/your-poll-history.component';
 import { YourPollsComponent } from './components/your-polls/your-polls.component';
 // Scaffolds when you include routing in your application
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path: 'access-poll',
     component: AccessPollComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'vote',
+    component: VoteComponent,
     canActivate: [AuthGuard]
   },
   {
