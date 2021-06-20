@@ -29,7 +29,7 @@
             <label for="dateToClose">End Date</label>
         </div>
         <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Poll End Date" [(ngModel)]="this.newpoll.dateToClose">
+            <input matInput [matDatepicker]="picker" placeholder="Poll End Date" [(ngModel)]="newpoll.dateToClose" name="newdate">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker ></mat-datepicker>
           </mat-form-field>

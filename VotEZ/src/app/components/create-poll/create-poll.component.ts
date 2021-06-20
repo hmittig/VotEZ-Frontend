@@ -12,14 +12,13 @@ import { VotezRESTService } from 'src/app/services/votez-rest.service';
 export class CreatePollComponent implements OnInit {
   newpoll: poll;
   authUser: any;
-  dateEntered =  Date.now;
   constructor(private authService :AuthService, public pollService: VotezRESTService, private router: Router) {
     this.newpoll =
     {
       id: 0,
       question: '',
       code: '',
-      dateToClose: Date.now,
+      dateToClose: new Date,
       email: '',
       pollChoice:
       {
@@ -50,8 +49,6 @@ export class CreatePollComponent implements OnInit {
   }
 
   onSubmit(): void{
-    //debugger;
-    //this.newpoll.dateToClose = this.dateEntered;
     this.pollService.CreateAPoll(this.newpoll).subscribe(
       (poll) =>
       {
