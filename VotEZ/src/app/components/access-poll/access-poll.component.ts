@@ -33,14 +33,20 @@ export class AccessPollComponent implements OnInit {
 
 
   onSubmit(): void{
-    this.pollService.PollCheck(this.code,this.useremail).subscribe(
-      poll =>
-      {
-        this.retrievedpoll = poll;
-        this.GetPollByID(this.retrievedpoll.id);
-      }
-    )
-    
+    if(!this.code)
+    {
+      alert('Please enter a valid access code.')
+      return
+    }
+    else{
+      this.pollService.PollCheck(this.code,this.useremail).subscribe(
+        poll =>
+        {
+          this.retrievedpoll = poll;
+          this.GetPollByID(this.retrievedpoll.id);
+        }
+      )
+    }
   }
 
   GetPollByID(id: number){

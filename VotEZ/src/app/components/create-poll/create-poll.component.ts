@@ -49,12 +49,38 @@ export class CreatePollComponent implements OnInit {
   }
 
   onSubmit(): void{
-    this.pollService.CreateAPoll(this.newpoll).subscribe(
-      (poll) =>
-      {
-        alert(`${this.newpoll.email} has created a new poll! Your access code is ${this.newpoll.code}. Click OK to return to the homepage.`);
-        this.router.navigate(['']);
-      }
-    )
+    if(!this.newpoll.question){
+      alert('Please enter a question.');
+      return 
+    }
+    if(!this.newpoll.code){
+      alert('Please enter a code.');
+      return 
+    }
+    if(!this.newpoll.pollChoice.option1){
+      alert('Please enter a first option for your poll.');
+      return 
+    }
+    if(!this.newpoll.pollChoice.option2){
+      alert('Please enter a second option for your poll.');
+      return 
+    }
+    if(!this.newpoll.pollChoice.option3){
+      alert('Please enter a third option for your poll.');
+      return 
+    }
+    if(!this.newpoll.dateToClose){
+      alert('Please enter an end date for your poll.');
+      return 
+    }
+    else{
+      this.pollService.CreateAPoll(this.newpoll).subscribe(
+        (poll) =>
+        {
+          alert(`${this.newpoll.email} has created a new poll! Your access code is ${this.newpoll.code}. Click OK to return to the homepage.`);
+          this.router.navigate(['']);
+        }
+      )
+    }
   }
 }
