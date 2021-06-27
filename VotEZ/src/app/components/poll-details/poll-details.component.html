@@ -22,14 +22,24 @@
             <tr>
                 <td>Option 1: </td>
                 <td>{{poll.pollChoice.option1}}</td>
+                <td>Total</td>
+                <td>{{op1total}}</td>
             </tr>
             <tr>
                 <td>Option 2: </td>
                 <td>{{poll.pollChoice.option2}}</td>
+                <td>Total</td>
+                <td>{{op2total}}</td>
             </tr>
             <tr>
                 <td>Option 3: </td>
                 <td>{{poll.pollChoice.option3}}</td>
+                <td>Total</td>
+                <td>{{op3total}}</td>
+            </tr>
+            <tr>
+                <td>Total Votes: </td>
+                <td>{{op1total+op2total+op3total}}</td>
             </tr>
         </tbody>
         <button class="btn btn-primary" (click)="back()">Return to polls</button>

@@ -17,7 +17,9 @@ export class VoteComponent implements OnInit {
   poll: poll;
   pollvote: pollvote;
   useremail: string;
-  //choice: string;
+  op1total: number;
+  op2total: number;
+  op3total: number;
   constructor(private authService: AuthService, private pollService: VotezRESTService, private route: ActivatedRoute, private router: Router, private location: Location) { 
     this.poll =
     {
@@ -52,6 +54,24 @@ export class VoteComponent implements OnInit {
             this.poll = foundPoll;
             this.pollvote.pollID = this.poll.id;
             console.log(foundPoll);
+            this.pollService.GetOption1Total(this.poll.id, this.poll.pollChoice.option1).subscribe(
+              op1 => {
+                this.op1total = op1;
+                console.log(op1);
+              }
+            )
+            this.pollService.GetOption2Total(this.poll.id, this.poll.pollChoice.option2).subscribe(
+              op2 => {
+                this.op2total = op2;
+                console.log(op2);
+              }
+            )
+            this.pollService.GetOption3Total(this.poll.id, this.poll.pollChoice.option3).subscribe(
+              op3 => {
+                this.op3total = op3;
+                console.log(op3);
+              }
+            )
           }
         )
       }
@@ -85,5 +105,6 @@ export class VoteComponent implements OnInit {
   back(): void {
     this.location.back();
 }
+
 
 }

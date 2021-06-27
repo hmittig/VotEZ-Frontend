@@ -72,4 +72,15 @@ export class VotezRESTService {
     return this.http.post<pollvote>(this.pollVoteURL, pv, this.httpOptions);
   }
   
+  GetOption1Total(pollID: number, option1: string): Observable<number>{
+    return this.http.get<number>(`${this.pollVoteURL}/total1/${pollID},${option1}`,this.httpOptions);
+  }
+
+  GetOption2Total(pollID: number, option2: string): Observable<number>{
+    return this.http.get<number>(`${this.pollVoteURL}/total2/${pollID},${option2}`,this.httpOptions);
+  }
+
+  GetOption3Total(pollID: number, option3: string): Observable<number>{
+    return this.http.get<number>(`${this.pollVoteURL}/total3/${pollID},${option3}`,this.httpOptions);
+  }
 }
