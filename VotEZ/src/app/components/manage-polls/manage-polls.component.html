@@ -1,0 +1,18 @@
+<div class="container transparent">
+    <h2>All Polls</h2>
+    <table class="table">
+        <thead>
+            <th>Poll Question</th>
+            <th>Code</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pollget of polls;">
+                <td hidden>{{pollget.id}}</td>
+                <td>{{pollget.question}}</td>
+                <td>{{pollget.code}}</td>
+                <button class="btn btn-primary" (click)="GetPollByID(pollget.id)">View Details</button>
+                <button class="btn btn-danger" (click)="DeletePoll(pollget.id)">Delete</button>
+            </tr>
+        </tbody>
+    </table>
+</div>

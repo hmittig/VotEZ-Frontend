@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link"[routerLink]="['/about']" [routerLinkActive]="['active']">About</a>
                 </li>
+                <li class="nav-item" *ngIf="adminvalue">
+                    <a class="nav-link"[routerLink]="['/manage-polls']" [routerLinkActive]="['active']">Admin</a>
+                  </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/create-poll']" [routerLinkActive]="['active']">Create Poll</a>
                    </li>

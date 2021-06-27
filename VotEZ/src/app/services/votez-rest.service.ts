@@ -54,6 +54,14 @@ export class VotezRESTService {
     return this.http.get<poll>(`${this.pollURL}/${id}`, this.httpOptions);
   }
 
+  GetAllPolls() : Observable<poll[]>{
+    return this.http.get<poll[]>(`${this.pollURL}`,this.httpOptions);
+  }
+
+  DeletePoll(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.pollURL}/${id}`, this.httpOptions);
+  }
+
   GetAllVotes() : Observable<pollvote[]>{
     return this.http.get<pollvote[]>(`${this.pollVoteURL}`,this.httpOptions);
   }

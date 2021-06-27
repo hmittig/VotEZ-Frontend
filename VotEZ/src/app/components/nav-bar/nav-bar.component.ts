@@ -23,7 +23,7 @@ export class NavBarComponent implements OnInit {
     this.useremail =''
   }
   ngOnInit(): void {
-    /*this.auth.user$.subscribe (
+    this.auth.user$.subscribe (
       user =>
       this.userService.GetUserByEmail(user.email).subscribe
       (
@@ -36,7 +36,7 @@ export class NavBarComponent implements OnInit {
           }
         }
       )
-    )*/
+    )
   }
 
 }

@@ -5,6 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AccessPollComponent } from './components/access-poll/access-poll.component';
 import { CreatePollComponent } from './components/create-poll/create-poll.component';
 import { HomeComponent } from './components/home/home.component';
+import { ManagePollsComponent } from './components/manage-polls/manage-polls.component';
 import { PollDetailsComponent } from './components/poll-details/poll-details.component';
 import { PollVotesComponent } from './components/poll-votes/poll-votes.component';
 import { VoteComponent } from './components/vote/vote.component';
@@ -55,6 +56,11 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'manage-polls',
+    component: ManagePollsComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
